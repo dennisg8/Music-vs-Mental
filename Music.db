@@ -1,0 +1,230 @@
+SELECT *
+  FROM music;
+  
+-- Shows how many people per age have anxiety, or depression.
+
+SELECT Age,
+       COUNT(Age) AS total_anxiety_age
+  FROM music
+ WHERE Anxiety > '0'
+ GROUP BY Age
+ ORDER BY Age DESC;
+
+SELECT Age,
+       COUNT(Age) AS total_depression_age
+  FROM music
+ WHERE Depression > '0'
+ GROUP BY Age
+ ORDER BY Age DESC;
+ 
+-- Shows highest rating genre of music amongst people with anxiety/depression mental illness.
+
+SELECT [Favorite genre],
+       COUNT([Favorite genre]) AS total_genre
+  FROM music
+ WHERE Anxiety > '0' AND 
+       Depression > '0'
+ GROUP BY [Favorite genre];
+ 
+-- Shows how many people per age have Insomnia and OCD.
+
+SELECT Age,
+       COUNT(Age) AS total_insomnia_age
+  FROM music
+ WHERE Insomnia > '0'
+ GROUP BY Age
+ ORDER BY Age DESC;
+
+SELECT Age,
+       COUNT(Age) AS total_ocd_age
+  FROM music
+ WHERE OCD > '0'
+ GROUP BY Age
+ ORDER BY Age DESC;
+ 
+-- Shows highest rating genre of music amongst people with Insomnia and OCD.
+
+SELECT [Favorite genre],
+       COUNT([Favorite genre]) AS total_genre
+  FROM music
+ WHERE Insomnia > '0' AND 
+       OCD > '0'
+ GROUP BY [Favorite genre];
+ 
+-- Shows people if music improved or had no effect on mental health.
+
+SELECT [Music effects],
+       COUNT([Music effects]) AS total_improve
+  FROM music
+ WHERE [Music effects] LIKE '%Improve%'
+ GROUP BY [Music effects];
+ 
+SELECT [Music effects],
+       COUNT([Music effects]) AS total_improve
+  FROM music
+ WHERE [Music effects] LIKE '%No effect%'
+ GROUP BY [Music effects];
+ 
+-- Shows which genre is most frequently listened to.
+
+SELECT [Frequency Classical],
+       COUNT([Frequency Classical]) AS total_class
+  FROM music
+ WHERE [Frequency Classical] LIKE 'Very frequently';
+
+SELECT [Frequency Country],
+       COUNT([Frequency Country]) AS total_country
+  FROM music
+ WHERE [Frequency Country] LIKE 'Very frequently';
+
+SELECT [Frequency EDM],
+       COUNT([Frequency EDM]) AS total_edm
+  FROM music
+ WHERE [Frequency EDM] LIKE 'Very frequently';
+
+SELECT [Frequency Folk],
+       COUNT([Frequency Folk]) AS total_folk
+  FROM music
+ WHERE [Frequency Folk] LIKE 'Very frequently';
+
+SELECT [Frequency Gospel],
+       COUNT([Frequency Gospel]) AS total_gospel
+  FROM music
+ WHERE [Frequency Gospel] LIKE 'Very frequently';
+
+SELECT [Frequency Hip hop],
+       COUNT([Frequency Hip hop]) AS total_hiphop
+  FROM music
+ WHERE [Frequency Hip hop] LIKE 'Very frequently';
+
+SELECT [Frequency Jazz],
+       COUNT([Frequency Jazz]) AS total_jazz
+  FROM music
+ WHERE [Frequency Jazz] LIKE 'Very frequently';
+
+SELECT [Frequency Kpop],
+       COUNT([Frequency Kpop]) AS total_kpop
+  FROM music
+ WHERE [Frequency Kpop] LIKE 'Very frequently';
+
+SELECT [Frequency Latin],
+       COUNT([Frequency Latin]) AS total_latin
+  FROM music
+ WHERE [Frequency Latin] LIKE 'Very frequently';
+
+SELECT [Frequency Lofi],
+       COUNT([Frequency Lofi]) AS total_lofi
+  FROM music
+ WHERE [Frequency Lofi] LIKE 'Very frequently';
+
+SELECT [Frequency Metal],
+       COUNT([Frequency Metal]) AS total_metal
+  FROM music
+ WHERE [Frequency Metal] LIKE 'Very frequently';
+
+SELECT [Frequency Pop],
+       COUNT([Frequency Pop]) AS total_pop
+  FROM music
+ WHERE [Frequency Pop] LIKE 'Very frequently';
+
+SELECT [Frequency Rnb],
+       COUNT([Frequency Rnb]) AS total_rnb
+  FROM music
+ WHERE [Frequency Rnb] LIKE 'Very frequently';
+
+SELECT [Frequency Rap],
+       COUNT([Frequency Rap]) AS total_rap
+  FROM music
+ WHERE [Frequency Rap] LIKE 'Very frequently';
+
+SELECT [Frequency Rock],
+       COUNT([Frequency Rock]) AS total_rock
+  FROM music
+ WHERE [Frequency Rock] LIKE 'Very frequently';
+
+SELECT [Frequency video_game_music],
+       COUNT([Frequency video_game_music]) AS total_video
+  FROM music
+ WHERE [Frequency video_game_music] LIKE 'Very frequently';
+ 
+-- Shows which genre is least frequently listened to.
+
+SELECT [Frequency Classical],
+       COUNT([Frequency Classical]) AS total_class
+  FROM music
+ WHERE [Frequency Classical] LIKE 'Never';
+
+SELECT [Frequency Country],
+       COUNT([Frequency Country]) AS total_country
+  FROM music
+ WHERE [Frequency Country] LIKE 'Never';
+
+SELECT [Frequency EDM],
+       COUNT([Frequency EDM]) AS total_edm
+  FROM music
+ WHERE [Frequency EDM] LIKE 'Never';
+
+SELECT [Frequency Folk],
+       COUNT([Frequency Folk]) AS total_folk
+  FROM music
+ WHERE [Frequency Folk] LIKE 'Never';
+
+SELECT [Frequency Gospel],
+       COUNT([Frequency Gospel]) AS total_gospel
+  FROM music
+ WHERE [Frequency Gospel] LIKE 'Never';
+
+SELECT [Frequency Hip hop],
+       COUNT([Frequency Hip hop]) AS total_hiphop
+  FROM music
+ WHERE [Frequency Hip hop] LIKE 'Never';
+
+SELECT [Frequency Jazz],
+       COUNT([Frequency Jazz]) AS total_jazz
+  FROM music
+ WHERE [Frequency Jazz] LIKE 'Never';
+
+SELECT [Frequency Kpop],
+       COUNT([Frequency Kpop]) AS total_kpop
+  FROM music
+ WHERE [Frequency Kpop] LIKE 'Never';
+
+SELECT [Frequency Latin],
+       COUNT([Frequency Latin]) AS total_latin
+  FROM music
+ WHERE [Frequency Latin] LIKE 'Never';
+
+SELECT [Frequency Lofi],
+       COUNT([Frequency Lofi]) AS total_lofi
+  FROM music
+ WHERE [Frequency Lofi] LIKE 'Never';
+
+SELECT [Frequency Metal],
+       COUNT([Frequency Metal]) AS total_metal
+  FROM music
+ WHERE [Frequency Metal] LIKE 'Never';
+
+SELECT [Frequency Pop],
+       COUNT([Frequency Pop]) AS total_pop
+  FROM music
+ WHERE [Frequency Pop] LIKE 'Never';
+
+SELECT [Frequency Rnb],
+       COUNT([Frequency Rnb]) AS total_rnb
+  FROM music
+ WHERE [Frequency Rnb] LIKE 'Never';
+
+SELECT [Frequency Rap],
+       COUNT([Frequency Rap]) AS total_rap
+  FROM music
+ WHERE [Frequency Rap] LIKE 'Never';
+
+SELECT [Frequency Rock],
+       COUNT([Frequency Rock]) AS total_rock
+  FROM music
+ WHERE [Frequency Rock] LIKE 'Never';
+
+SELECT [Frequency video_game_music],
+       COUNT([Frequency video_game_music]) AS total_video
+  FROM music
+ WHERE [Frequency video_game_music] LIKE 'Never';
